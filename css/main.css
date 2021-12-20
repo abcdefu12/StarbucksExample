@@ -292,9 +292,6 @@ header .badges .badge{
 
 
 /* NOTICE */
-.notice{
-    
-}
 /* NOTICE-LINE */
 .notice .notice-line{
     position: relative;
@@ -462,4 +459,46 @@ header .badges .badge{
 
 
 /* REWARDS */
-.rewards .
+.rewards{
+    position: relative;
+}
+.rewards .bg-left{
+    width: 50%;
+    height: 100%;
+    background-color: #272727;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.rewards .bg-right{
+    width: 50%;
+    height: 100%;
+    background-color: #d5c798;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.rewards .inner{
+    background-image: url("../images/rewards.jpg");
+    height: 241px;
+    /* 위의common주석에 .inner로 전역 position값 선언함 */
+}
+.rewards .btn-group{
+    position: absolute;
+    bottom: 24px;
+    right: 0;
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.rewards .btn-group .btn.sign-up{
+    margin-right: 10px;
+}
+.rewards .btn-group .btn.sign-in{
+    width: 110px;
+}
+.rewards .btn-group .btn.gift{
+    margin-top: 10px;
+    flex-grow: 1;
+}
+
