@@ -21,6 +21,7 @@ searchInputEl.addEventListener('blur', function() {
 
 // BADGE //
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
 window.addEventListener('scroll', _.throttle(function(){
     if(window.scrollY > 500){
@@ -29,18 +30,30 @@ window.addEventListener('scroll', _.throttle(function(){
             opacity: 0,
             display: 'none'
         });
-        
         // badgeEl.style.display = 'none';
+        gsap.to(toTopEl, .2, {
+            x: 0
+        });
+
     } else{
         gsap.to(badgeEl, .6, {
             opacity: 1,
             display: 'block'
         });
         // badgeEl.style.display = 'block';
+        gsap.to(toTopEl, .2, {
+            x: 100
+        });
     }
 }, 300));
 // gsap.to(요소, 지속시간, 옵션); 애니메이션 라이브러리
 // _.throttle(함수, 시간) -> 이벤트에 부하를 걸어 데이터과부하 방지
+
+toTopEl.addEventListener('click', function(){
+    gsap.to(window, .7, {
+        scrollTo: 0
+    });
+});
 
 
 // FADE-IN
